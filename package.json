@@ -1,0 +1,25 @@
+{
+  "name": "tmdbts",
+  "version": "0.0.1",
+  "description": "Typescript wrapper for The Movie Database API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinrossil/tmdbts.git"
+  },
+  "keywords": [
+    "TMDB",
+    "Typescript",
+    "API",
+    "Wrapper"
+  ],
+  "author": "Martin Rossil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martinrossil/tmdbts/issues"
+  },
+  "homepage": "https://github.com/martinrossil/tmdbts#readme"
+}
