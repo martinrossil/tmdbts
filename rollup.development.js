@@ -5,7 +5,7 @@ import livereload from 'rollup-plugin-livereload';
 import resolve from '@rollup/plugin-node-resolve';
 
 export default [{
-        input: ['./src/TMDBTSDev.ts', './src/Module.ts', './src/Module2.ts'],
+        input: './src/TMDBTSDev.ts',
         plugins: [
             typescript({ tsconfig: 'tsconfig.development.json' }),
             resolve(),
@@ -18,9 +18,7 @@ export default [{
             livereload()
         ],
         output: {
-            // file: './development/esnext.js',
-            entryFileNames: '[name].js',
-            dir: './development',
+            file: './development/esnext.js',
             format: 'esm',
             sourcemap: 'inline'
         }

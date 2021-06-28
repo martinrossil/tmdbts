@@ -9,10 +9,8 @@ export default class TMDBTSDev extends ApplicationElement {
         this.name = 'TMDBTSDev';
         console.log(this.name); // 508943 Luca
         window.addEventListener('click', async () => { // 663870 Retfærdighedens ryttere // 348 Alien - Den 8 passager
-            // const { default: IModule } = await import('./Module');
-            // this.addElement(new IModule());
-            // const [images, error] = await this.tmdb.getMovieImages(663870, 'da');
-            // console.log(images);
+            const [images, error] = await this.tmdb.getMovieImages(663870, 'da');
+            console.log(images);
             // const [playing, error] = await this.tmdb.getNowPlaying('en', 'AU', 1);
             // console.log(playing);
             // const [credits, error] = await this.tmdb.getPersonCredits(1019, 'da-DK');
