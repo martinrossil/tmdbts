@@ -16,6 +16,9 @@ import { LanguageSchema } from '../schemas/LanguageSchema';
 import { MovieSchema } from '../schemas/MovieSchema';
 import { PersonSchema } from '../schemas/PersonSchema';
 import { ReleaseDatesSchema } from '../schemas/ReleaseDatesSchema';
+import { TranslationsSchema } from '../schemas/TranslationsSchema';
+import { WatchProvidersSchema } from '../schemas/WatchProvidersSchema';
+import { Fetch } from '../Types';
 
 export default class TMDB implements ITMDB {
     private static BASE_URL_V3 = 'https://api.themoviedb.org/3';
@@ -205,6 +208,38 @@ export default class TMDB implements ITMDB {
             const json = await response.json();
             if (response.ok) {
                 console.table(json);
+            }
+            return [null, new Error(json.status_message)];
+        } catch (error) {
+            const typeError: TypeError = error;
+            return [null, new Error(typeError.message)];
+        }
+    }
+
+    public async getTranslations(id: number): Promise<[TranslationsSchema | null, Error | null]> {
+        const url = TMDB.BASE_URL_V3 + '/movie/' + id + '/translations';
+        try {
+            const response = await fetch(url, this.requestInit);
+            const json = await response.json();
+            if (response.ok) {
+                const translationsSchema: TranslationsSchema = json;
+                return [translationsSchema, null];
+            }
+            return [null, new Error(json.status_message)];
+        } catch (error) {
+            const typeError: TypeError = error;
+            return [null, new Error(typeError.message)];
+        }
+    }
+
+    public async getWatchProviders(id: number): Promise<[WatchProvidersSchema | null, Error | null]> {
+        const url = TMDB.BASE_URL_V3 + '/movie/' + id + '/watch/providers';
+        try {
+            const response = await fetch(url, this.requestInit);
+            const json = await response.json();
+            if (response.ok) {
+                const watchProvidersSchema: WatchProvidersSchema = json;
+                return [watchProvidersSchema, null];
             }
             return [null, new Error(json.status_message)];
         } catch (error) {

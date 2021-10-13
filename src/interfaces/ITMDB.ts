@@ -7,6 +7,8 @@ import IImages from './IImages';
 import ILanguage from './ILanguage';
 import IMovie from './IMovie';
 import IPerson from './IPerson';
+import { TranslationsSchema } from '../schemas/TranslationsSchema';
+import { WatchProvidersSchema } from '../schemas/WatchProvidersSchema';
 
 export default interface ITMDB {
     getMovie(id: number, language: string): Promise<[IMovie | null, Error | null]>;
@@ -20,4 +22,6 @@ export default interface ITMDB {
     getNowPlaying(language: string, region: string, page: number): Promise<[unknown | null, Error | null]>;
     getPerson(id: number, language: string): Promise<[IPerson | null, Error | null]>;
     getPersonCredits(id: number, language: string): Promise<[unknown | null, Error | null]>;
+    getTranslations(id: number): Promise<[TranslationsSchema | null, Error | null]>;
+    getWatchProviders(id: number): Promise<[WatchProvidersSchema | null, Error | null]>;
 }
