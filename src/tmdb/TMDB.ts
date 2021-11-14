@@ -18,7 +18,6 @@ import { PersonSchema } from '../schemas/PersonSchema';
 import { ReleaseDatesSchema } from '../schemas/ReleaseDatesSchema';
 import { TranslationsSchema } from '../schemas/TranslationsSchema';
 import { WatchProvidersSchema } from '../schemas/WatchProvidersSchema';
-import { Fetch } from '../Types';
 
 export default class TMDB implements ITMDB {
     private static BASE_URL_V3 = 'https://api.themoviedb.org/3';
@@ -47,7 +46,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(movieJson.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -64,7 +63,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -81,7 +80,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -97,7 +96,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -114,7 +113,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -130,7 +129,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -147,7 +146,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -164,7 +163,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -179,7 +178,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -196,7 +195,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -211,7 +210,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -227,7 +226,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
@@ -243,7 +242,7 @@ export default class TMDB implements ITMDB {
             }
             return [null, new Error(json.status_message)];
         } catch (error) {
-            const typeError: TypeError = error;
+            const typeError: TypeError = error as TypeError;
             return [null, new Error(typeError.message)];
         }
     }
